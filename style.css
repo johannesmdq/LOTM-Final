@@ -1,0 +1,197 @@
+:root {
+  --preto: #0a0a0a;
+  --branco: #f5f5f5;
+  --dourado: #d4af37;
+  --roxo: #9d4edd;
+  --roxo-claro: #c77dff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--preto) !important;
+  color: var(--branco) !important;
+}
+
+h1, h2, h3, h4, h5 { color: var(--dourado) !important; }
+p, li, label, small, dd { color: var(--branco) !important; }
+a { color: var(--dourado); }
+a:hover { color: var(--roxo-claro); }
+
+/* Compensa o menu fixo ao clicar nos links */
+section { scroll-margin-top: 70px; padding: 50px 0; }
+
+.subtitulo {
+  color: var(--roxo-claro) !important;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* ===== MENU ===== */
+.menu-lom {
+  background-color: #0d0b12 !important;
+  border-bottom: 2px solid var(--roxo);
+}
+.menu-lom .nav-link {
+  color: var(--dourado) !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 8px;
+}
+.menu-lom .nav-link:hover { color: var(--roxo-claro) !important; }
+.navbar-toggler { border-color: var(--dourado) !important; }
+
+/* ===== BANNER COM MOLDURA ===== */
+.banner-moldura {
+  padding: 100px 20px 20px;
+  text-align: center;
+}
+.banner-moldura img {
+  width: 100%;
+  max-width: 1000px;
+  border: 3px solid var(--dourado);
+  border-radius: 12px;
+  box-shadow: 0 0 25px var(--roxo), 0 0 50px rgba(157, 78, 221, 0.4);
+}
+
+/* ===== HOME (TÍTULO) ===== */
+#home {
+  text-align: center;
+  padding: 30px 20px 50px;
+}
+#home h1 {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: bold;
+  text-shadow: 3px 3px 10px #000, 0 0 20px rgba(157, 78, 221, 0.5);
+}
+#home p {
+  color: var(--dourado) !important;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-style: italic;
+  text-shadow: 2px 2px 8px #000;
+}
+
+/* ===== TAROT ===== */
+.card-tarot {
+  background-color: #14101c !important;
+  border: 1px solid var(--dourado) !important;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-tarot:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--roxo);
+}
+
+/* ===== CAMINHOS ===== */
+dt { color: var(--dourado); margin-top: 12px; }
+
+/* ===== MUNDO ===== */
+.lista-mundo li { margin-bottom: 8px; }
+.lista-mundo strong { color: var(--dourado); }
+
+/* ===== CITAÇÃO COM WALLPAPER ===== */
+#citacao {
+  position: relative;
+  background: url('imagens/wallpaper-lom.jpg') center/cover no-repeat;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+#citacao::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+#citacao blockquote, #citacao cite { position: relative; z-index: 1; }
+#citacao blockquote {
+  color: var(--dourado) !important;
+  font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+  font-style: italic;
+  max-width: 900px;
+  text-shadow: 2px 2px 8px #000;
+}
+#citacao cite {
+  color: var(--branco);
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 6px #000;
+}
+
+/* ===== FORMULÁRIO ===== */
+#formContato label { margin-top: 12px; }
+.form-control {
+  background-color: #1a1a1a !important;
+  color: var(--branco) !important;
+  border: 1px solid var(--dourado) !important;
+}
+.form-control::placeholder { color: #999 !important; }
+.form-control:focus { box-shadow: 0 0 8px var(--roxo) !important; }
+
+.btn-enviar {
+  background-color: var(--dourado);
+  color: var(--preto);
+  font-weight: bold;
+  padding: 8px 30px;
+}
+.btn-enviar:hover { background-color: var(--roxo); color: var(--branco); }
+
+.msg-erro { color: #ff6b6b !important; font-weight: bold; }
+.msg-sucesso { color: var(--dourado) !important; font-weight: bold; }
+
+/* ===== VÍDEO ===== */
+.video-lom {
+  border: 2px solid var(--dourado);
+  border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  position: relative;
+  background: url('imagens/footer-lom.jpg') center/cover no-repeat;
+  padding: 40px 20px;
+}
+footer > * { position: relative; z-index: 1; }
+
+/* Só no PC: escurece o fundo */
+@media (min-width: 992px) {
+  footer {
+    background-position: center 30%;
+    text-align: center;
+  }
+  footer ul { list-style: none; padding: 0; }
+  footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+/* ===== MODAL DOS MEMBROS ===== */
+.card-clicavel { cursor: pointer; }
+
+.dica-membros {
+  color: var(--roxo-claro) !important;
+  font-style: italic;
+}
+
+.modal-lom {
+  background-color: #14101c !important;
+  border: 2px solid var(--dourado);
+  box-shadow: 0 0 25px var(--roxo);
+}
+.modal-lom .modal-header { border-bottom: 1px solid var(--roxo); }
+.modal-lom .modal-title { color: var(--dourado) !important; font-weight: bold; }
+.modal-lom h6 { color: var(--roxo-claro) !important; margin-top: 15px; }
+.modal-lom strong { color: var(--dourado); }
+
+.honorifico {
+  color: var(--dourado) !important;
+  font-style: italic;
+  border-left: 3px solid var(--roxo);
+  padding-left: 15px;
+}
